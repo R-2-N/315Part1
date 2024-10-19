@@ -7,10 +7,10 @@ sign          [+-]
 
 %%
 
-not
-or
-and
-xor
+not                           print("not");
+or                            print("or");
+and                           print("and");
+xor                           print("xor");
 ==                            print("equals");
 =                             print("assignment");
 <                             print("lesserop");
