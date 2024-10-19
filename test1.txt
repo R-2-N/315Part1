@@ -1,0 +1,16 @@
+// A function that takes heading and distance and moves drone to the target.
+def testFunct (heading, distance) do {
+	while (getHeading() != heading) do {
+		if(heading > getHeading()) do {
+			turnRight1Deg();
+		}
+		otherwise do {
+			turnLeft1Deg();
+		};
+	};
+	while (distance > 0) do {
+		moveForward();
+	};
+	horizontalStop();
+	return true;
+}

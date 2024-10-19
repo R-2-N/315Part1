@@ -1,0 +1,31 @@
+<statement_list> ::= <statement> ";" <statement_list> | <statement> ";"
+<statement> ::= <void_statement> | <value_statement> | <comment>
+<comment> ::= "//" <text>
+
+<void_statement> ::= <conditional_statement> | <loop> | <function_def> | <type_def> | <continue> | <break>
+<value_statement> ::= <function_call> | <expression> | <integer> | <float> | <string> | <boolean> | <not> <value_statement>
+
+<conditional_statement> ::= <if> <value_statement> <do> "{" <statement_list> "}" | <if> <conditional_expression> <do> "{" <statement_list> "}" <else> <do> "{" <statement_list> "}"
+
+<loop> ::= <while_loop> | <for_loop>
+<while_loop> ::= <while> <value_statement> <do> "{" <statement_list> "}" 
+<for_loop> ::= <for> <assignment_expression> ";" <value_statement> ";" <assignment_expression> "do {" <statement_list> "}" 
+
+<function_def> ::= <def> <variable> "(" <variable_list> ")" <do> "{" <statement_list> <return> "(" <value_statement> ")" "}"
+<function_call> ::= <call> <function_name> "(" <variable_list> ")"
+<function_name> ::= <variable> | <function_primitive>
+<variable_list> ::= <variable> "," <variable_list> | <variable>
+<function_primitive> ::= "getHeading" | "getAltitude" | "getTime" | "ascend" | "descend" | "verticalStop" | "moveForward" | "moveBackward" | "horizontalStop" | "turnLeft1Deg" | "turnRight1Deg" | "enableSpray" | "disableSpray"
+
+<expression> ::= <conditional_expresion> | <assignment_and_arithmetic_expression>
+
+<conditional_expression> ::= <value_statement> <condition_operator> <value_statement>
+<condition_operator> ::= "<" | ">" | "<=" | ">=" | "==" | "and" | "or" | "xor"
+
+<type_def> ::= <type> <variable>
+<assignment_expression> ::= <type> <variable> "=" <value_statement> | <variable> "=" <value_statement> | <arithmetic_expression>
+<arithmetic_expression> ::= "(" <value_statement> ")" <operator> "(" <value_statement> ")" | "(" <arithmetic_expression> ")"
+
+<operator> ::= <low_presedence_operator>
+<low_presedence_operator> ::= "-" | "+" | <high_presedence_operator>
+<high_presedence_operator> ::= "/" | "*"
