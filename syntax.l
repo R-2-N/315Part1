@@ -29,7 +29,7 @@ xor                           printf("XOR");
 \{                             printf("LBRACE");
 \}                             printf("RBRACE");
 (int|string|bool|float|double|char)                           printf("TYPE");
-(getHeading|getAltitude|getTime|ascend|descend|verticalStop|moveForward|moveBackward|horizontalStop|turnLeft1Deg|turnRight1Deg|enableSpray|disableSpray)      printf("PRIMITIVE_FUNCTION");
+(getHeading|getAltitude|getTime|ascend|descend|verticalStop|moveForward|moveBackward|horizontalStop|turnLeft1Deg|turnRight1Deg|enableSpray|disableSpray|input|output)      printf("PRIMITIVE_FUNCTION");
 continue                      printf("CONTINUE");
 def                           printf("DEF");
 break                         printf("BREAK");
