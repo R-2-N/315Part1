@@ -2,28 +2,28 @@
 def testFunct1 (heading, distance) do {
 
 	// turning to the right angle
-	while (getHeading() != heading) do {
+	while ( getHeading () != heading) do {
 		if(heading > getHeading()) do {
 			turnRight1Deg();
 		}
-		otherwise do {
-			turnLeft1Deg();
+		else do {
+			turnLeft1Deg ();
 		};
 	};
 
 	// moving the drone horizontally
 
 	// using 2 meters per second for speed
-	moveForward(2);
+	moveForward ( 2 );
 
-	int currentTime = getTime();
+	int currentTime = getTime ();
 
 	// assuming distance is in meters
-	int neededTime = distance/2;
-	while (getTime != currentTime + neededTime) {
+	int neededTime = distance / 2;
+	while ( getTime != currentTime + neededTime ) {
 		continue;
 	};
-	horizontalStop();
+	horizontalStop ();
 
 	// finish operation
 	return true;
