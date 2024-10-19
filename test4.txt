@@ -1,0 +1,18 @@
+//fourth test function to spin around in a circle of radius r given by the user for n times.
+
+def testFunction4 () do{
+    int r = input ( "circle radius" );
+    int n = input ( "spin amount" );
+    //get the drone flying
+    ascend ( 5 );
+    //nested loop that spins the drone n times in a circle of radius r
+    for ( int i = 0; i < n; i = i + 1 ) do {
+        for ( int j = 0; j < 360; j = j + 1 ) do {
+            turnRight1Deg ();
+            moveForward ( 1 );
+        };
+    };
+    descend ( 5 );
+    //drone is now back at the starting position except its 1 degrees to the side
+    output ( "done" );
+};
