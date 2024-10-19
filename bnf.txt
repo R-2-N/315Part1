@@ -12,9 +12,9 @@
 <for_loop> ::= <for> <assignment_expression> ";" <value_statement> ";" <arithmetic_expression> "do {" <statement_list> "}" 
 
 <function_def> ::= <def> <variable> "(" <variable_list> ")" <do> "{" <statement_list> <return> "(" <value_statement> ")" "}"
-<function_call> ::= <call> <string> "(" <variable_list> ")" | <call> <function_primitive>
+<function_call> ::= <call> <variable> "(" <variable_list> ")" | <call> <function_primitive> "(" <variable_list> ")"
 <variable_list> ::= <variable> "," <variable_list> | <variable>
-<function_primitive> ::= "getHeading()" | "getAltitude()" | "getTime()" | "ascend()" | "descend()" | "verticalStop()" | "moveForward()" | "moveBackward()" | "horizontalStop()" | "turnLeft1Deg()" | "turnRight1Deg()" | "enableSpray()" | "disableSpray()"
+<function_primitive> ::= "getHeading" | "getAltitude" | "getTime" | "ascend" | "descend" | "verticalStop" | "moveForward" | "moveBackward" | "horizontalStop" | "turnLeft1Deg" | "turnRight1Deg" | "enableSpray" | "disableSpray"
 
 <expression> ::= <conditional_expresion> | <assignment_expression> | <arithmetic_expression>
 
@@ -22,7 +22,7 @@
 <condition_operator> ::= "<" | ">" | "<=" | ">=" | "==" | "and" | "or" | "xor"
 
 <assignment_expression> ::= <type> <variable> "=" <value_statement>
-<arithmetic_expression> ::= <value_statement> <operator> <value_statement>
+<arithmetic_expression> ::= "(" <value_statement> ")" <operator> "( <value_statement> ")"
 
 <operator> ::= <low_presedence_operator> | <high_presedence_operator>
 <low_presedence_operator> ::= "-" | "+"
