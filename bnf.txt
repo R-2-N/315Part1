@@ -35,7 +35,10 @@
 <highest_precedence_operator> ::= <NOT>
 
 <value> ::= <VARIABLE> | <INTEGER> | <FLOAT> | <STRING> | <BOOLEAN> | <function_call>
-<function_call> ::= <function_name> <LP> <variable_list> <RP>
+
 <function_name> ::= <VARIABLE> | <PRIMITIVE_FUNCTION>
+
+<function_call> ::= <function_name> <LP> <expression_list> <RP>
+<expression_list> ::= <expression> <COMMA> <expression_list> | <expression> | <EMPTY> 
 
 <EMPTY> ::=
