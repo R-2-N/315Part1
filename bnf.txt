@@ -12,25 +12,25 @@
 <while_loop> ::= <WHILE> <expression> <DO> <LBRACE> <statement_list> <RBRACE>
 <for_loop> ::= <FOR> <LP> <assignment_expression> <SEMICOLON> <expression> <SEMICOLON> <assignment_expression> <RP> <DO> <LBRACE> <statement_list> <RBRACE> 
 
-<function_def> ::= <DEF> <variable> <LP> <variable_list> <RP> <DO> <LBRACE> <statement_list> <RETURN> <LP> <expression> <RP> <RBRACE>
+<function_def> ::= <DEF> <VARIABLE> <LP> <variable_list> <RP> <DO> <LBRACE> <statement_list> <RETURN> <LP> <expression> <RP> <RBRACE>
 <function_call> ::= <function_name> <LP> <variable_list> <RP>
-<function_name> ::= <variable> | <PRIMITIVE_FUNCTION>
-<variable_list> ::= <variable> <COMMA> <variable_list> | <variable> | <EMPTY> 
+<function_name> ::= <VARIABLE> | <PRIMITIVE_FUNCTION>
+<variable_list> ::= <VARIABLE> <COMMA> <variable_list> | <VARIABLE> | <EMPTY> 
 
 <conditional_expression> ::= <conditional_expression> <condition_operator> <low_precedence_arithmetic_expression> | <LP> <conditional_expression> <RP> | <BOOLEAN>
 
 <condition_operator> ::= <LESSER> | <LARGER> | <LESSER_EQ> | <LARGER_EQ> | <EQUALS> | <NOT_EQUALS> | <AND> | <OR> | <XOR>
 
-<type_def> ::= <TYPE> <variable>
+<type_def> ::= <TYPE> <VARIABLE>
 
-<assignment_expression> ::= <TYPE> <variable> <ASSIGNMENT> <expression> | <variable> <ASSIGNMENT> <expression>
+<assignment_expression> ::= <TYPE> <VARIABLE> <ASSIGNMENT> <expression> | <VARIABLE> <ASSIGNMENT> <expression>
 <expression> ::= <conditional_expression> | <low_precedence_arithmetic_expression>
 
 <low_precedence_arithmetic_expression> ::=  <low_precedence_arithmetic_expression> <low_precedence_operator> <high_precedence_arithmetic_expression> | <high_precedence_arithmetic_expression>
 <high_precedence_arithmetic_expression> ::= <high_precedence_arithmetic_expression> <high_precedence_operator> <low_precedence_arithmetic_expression> | <highest_precedence_arithmetic_expression>
 <highest_precedence_arithmetic_expression> ::= <highest_precedence_operator> <highest_precedence_arithmetic_expression> | <LP> <low_precedence_arithmetic_expression> <RP> | <value>
 
-<value> ::= <variable> | <INTEGER> | <FLOAT> | <STRING> | <BOOLEAN> | <function_call>
+<value> ::= <VARIABLE> | <INTEGER> | <FLOAT> | <STRING> | <BOOLEAN> | <function_call>
 
 <low_precedence_operator> ::= <MINUS> | <PLUS> 
 <high_precedence_operator> ::= <DIVISION> | <MULTIPLICATION> | <MODULUS>
