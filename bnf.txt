@@ -18,13 +18,13 @@
 
 <type_def> ::= <TYPE> <VARIABLE>
 
-<expression> ::= <conditional_expression> | <low_precedence_arithmetic_expression>
+<expression> ::= <conditional_expression> | <assignment_expression>
 
 <conditional_expression> ::= <conditional_expression> <condition_operator> <low_precedence_arithmetic_expression> | <LP> <conditional_expression> <RP> | <BOOLEAN>
 
 <condition_operator> ::= <LESSER> | <LARGER> | <LESSER_EQ> | <LARGER_EQ> | <EQUALS> | <NOT_EQUALS> | <AND> | <OR> | <XOR>
 
-<assignment_expression> ::= <TYPE> <VARIABLE> <ASSIGNMENT> <expression> | <VARIABLE> <ASSIGNMENT> <expression>
+<assignment_expression> ::= <type_def> <ASSIGNMENT> <expression> | <VARIABLE> <ASSIGNMENT> <expression> | <low_precedence_arithmetic_expression>
 
 <low_precedence_arithmetic_expression> ::=  <low_precedence_arithmetic_expression> <low_precedence_operator> <high_precedence_arithmetic_expression> | <high_precedence_arithmetic_expression>
 <high_precedence_arithmetic_expression> ::= <high_precedence_arithmetic_expression> <high_precedence_operator> <low_precedence_arithmetic_expression> | <highest_precedence_arithmetic_expression>
