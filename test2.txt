@@ -9,15 +9,14 @@
 def testFunct2 () do {
 
     // increase height to 4 meters, move with 1 meter / second.
-    while ( getAltitude () < 4 ) do {
+    while ( getAltitude ( ) < 4 ) do {
         ascend ( 1 ) ;
     } ;
     verticalStop () ;
-    while ( getAltitude () > 4 ) do {
+    while ( getAltitude ( ) > 4 ) do {
         descend ( 1 ) ;
     } ;
     verticalStop () ;
-
 
     // start moving to the spray line
     testFunct1 ( 0 , 2 ) ;
