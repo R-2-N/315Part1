@@ -2,7 +2,7 @@
 
 <statement_list> ::= <statement> <SEMICOLON> <statement_list> | <statement> <SEMICOLON>
 <statement> ::= <void_statement> | <expression> 
-<comment_list> ::= <comment> <comment_list> | <comment>
+<comment_list> ::= <COMMENT> <comment_list> | <COMMENT>
 
 <void_statement> ::= <if_statement> | <loop> | <function_def> | <type_def> | <BREAK> | <CONTINUE>
 
@@ -12,24 +12,18 @@
 <while_loop> ::= <WHILE> <expression> <DO> <LBRACE> <statement_list> <RBRACE>
 <for_loop> ::= <FOR> <LP> <assignment_expression> <SEMICOLON> <expression> <SEMICOLON> <assignment_expression> <RP> <DO> <LBRACE> <statement_list> <RBRACE> 
 
-<function_def> ::= <def> <variable> <LP> <variable_list> <RP> <DO> <LBRACE> <statement_list> <return> <LP> <expression> <RP> <RBRACE>
+<function_def> ::= <DEF> <variable> <LP> <variable_list> <RP> <DO> <LBRACE> <statement_list> <RETURN> <LP> <expression> <RP> <RBRACE>
 <function_call> ::= <function_name> <LP> <variable_list> <RP>
-<function_name> ::= <variable> | <function_primitive>
-<variable_list> ::= <variable> "," <variable_list> | <variable> | <EMPTY> 
-<function_primitive> ::= "getHeading" | "getAltitude" | "getTime" | "ascend" | "descend" | "verticalStop" | "moveForward" | "moveBackward" | "horizontalStop" | "turnLeft1Deg" | "turnRight1Deg" | "enableSpray" | "disableSpray" | "input" | "output"
-
-
-
+<function_name> ::= <variable> | <PRIMITIVE_FUNCTION>
+<variable_list> ::= <variable> <COMMA> <variable_list> | <variable> | <EMPTY> 
 
 <conditional_expression> ::= <conditional_expression> <condition_operator> <low_precedence_arithmetic_expression> | <LP> <conditional_expression> <RP> | <BOOLEAN>
 
+<condition_operator> ::= <LESSER> | <LARGER> | <LESSER_EQ> | <LARGER_EQ> | <EQUALS> | <AND> | <OR> | <XOR>
 
+<type_def> ::= <TYPE> <variable>
 
-<condition_operator> ::= "<" | ">" | "<=" | ">=" | "==" | "and" | "or" | "xor"
-
-<type_def> ::= <type> <variable>
-
-<assignment_expression> ::= <type> <variable> "=" <expression> | <variable> "=" <expression>
+<assignment_expression> ::= <TYPE> <variable> <ASSIGNMENT> <expression> | <variable> <ASSIGNMENT> <expression>
 <expression> ::= <conditional_expression> | <low_precedence_arithmetic_expression>
 
 <low_precedence_arithmetic_expression> ::=  <low_precedence_arithmetic_expression> <low_precedence_operator> <high_precedence_arithmetic_expression> | <high_precedence_arithmetic_expression>
@@ -38,7 +32,7 @@
 
 <value> ::= <variable> | <INTEGER> | <FLOAT> | <STRING> | <BOOLEAN> | <function_call>
 
-<low_precedence_operator> ::= "-" | "+" 
-<high_precedence_operator> ::= "/" | "*" | "%"
-<high_precedence_operator> ::= "!"
+<low_precedence_operator> ::= <MINUS> | <PLUS> 
+<high_precedence_operator> ::= <DIVISION> | <MULTIPLICATION> | <MODULUS>
+<highest_precedence_operator> ::= <NOT>
 <EMPTY> ::=

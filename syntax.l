@@ -5,6 +5,7 @@ alphanumeric  ({digit}|{alphabetic})
 sign          [+-]
 %%
 ;                             printf("SEMICOLON");
+,                             printf("COMMA");
 !=                            printf("NOT_EQUALS");
 !                           printf("NOT");
 or                            printf("OR");
@@ -16,7 +17,7 @@ xor                           printf("XOR");
 \<=                            printf("LESSER_EQ");
 \>                             printf("LARGER");
 \>=                            printf("LARGER_EQ");
-%                             printf("MODULUS");
+\%                             printf("MODULUS");
 \+                             printf("PLUS");
 \-                             printf("MINUS");
 \*                             printf("MULTIPLICATION");
