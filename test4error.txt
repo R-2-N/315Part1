@@ -2,7 +2,7 @@
 
 def testFunction4 () do{
     int r = input ( "circle radius" ) // missing semicolon
-    int n = input ( "spin amount" ) // missing semicolon
+    int n = input ( "spin amount" );
     //get the drone flying
     ascend ( 5 );
     //nested loop that spins the drone n times in a circle of radius r
