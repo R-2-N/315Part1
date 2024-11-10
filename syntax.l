@@ -22,7 +22,7 @@ xor                           return(XOR);
 \-                             return(MINUS);
 \*                             return(MULTIPLICATION);
 \/\/.*                            return(COMMENT);
-\/\([^]|\\/[^\/])\*\/         return(COMMENT);
+\/\*([^*]|\*\/[^\/])*\*\/         return(COMMENT);
 \/                             return(DIVISION);
 \(                             return(LP);
 \)                             return(RP);
