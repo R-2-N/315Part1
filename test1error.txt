@@ -19,7 +19,7 @@ def testFunct1 ( heading , distance ) do {
 
 	// assuming distance is in meters
 	int neededTime = distance / 2 ;
-	while ( abc != neededTime + adg ) do {
+	while ( getTime() != neededTime + currentTime ) { // do keyword is missing!
 		continue ;
 	} ;
 	horizontalStop ( ) ;

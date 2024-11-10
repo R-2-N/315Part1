@@ -3,7 +3,7 @@
 // Main function that takes input and streams output.
 def testFunct2 ( ) do {
     int fibNo ;
-    fibNo = input ( "Fibonacci number no: " ) ;
+    fibNo = input ( ) ; // input function missing parameters!
 
     int fibNum = fib ( fibNo ) ;
     int squareNum = square ( fibNum ) ;

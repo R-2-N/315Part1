@@ -1,8 +1,8 @@
 //fourth test function to spin around in a circle of radius r given by the user for n times.
 
 def testFunction4 () do{
-    int r = input ( "circle radius" );
-    int n = input ( "spin amount" );
+    int r = input ( "circle radius" ) // missing semicolon
+    int n = input ( "spin amount" ) // missing semicolon
     //get the drone flying
     ascend ( 5 );
     //nested loop that spins the drone n times in a circle of radius r
