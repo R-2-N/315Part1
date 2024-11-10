@@ -1,4 +1,0 @@
-  strcpy(str, "abcdef");
-  for(i=0; i<10; i++)
-    printf("%d-",str[i]);
-  printf("\n");

@@ -1,8 +1,0 @@
-anbn: y.tab.c lex.yy.c
-	gcc -o anbn y.tab.c
-y.tab.c: anbn1.y lex.yy.c
-	yacc anbn1.y
-lex.yy.c: anbn0.l
-	lex anbn0.l
-clean:
-	rm -f lex.yy.c y.tab.c anbn

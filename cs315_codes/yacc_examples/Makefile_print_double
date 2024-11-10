@@ -1,9 +1,0 @@
-print-double: y.tab.c lex.yy.c
-	gcc -o print-double y.tab.c
-y.tab.c: print-double.y lex.yy.c
-	yacc print-double.y
-lex.yy.c: print-double.l
-	lex print-double.l
-clean:
-	rm -f lex.yy.c y.tab.c print-double
-
