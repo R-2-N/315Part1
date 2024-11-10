@@ -1,0 +1,28 @@
+// A function that calculates the given fibonacci numbers, takes square of them and prints it.
+
+// Main function that takes input and streams output.
+def testFunct2 ( ) do {
+    int fibNo ;
+    fibNo = input ( "Fibonacci number no: " ) ;
+
+    int fibNum = fib ( fibNo ) ;
+    int squareNum = square ( fibNum ) ;
+
+    output ( squareNum ) ;
+    return (squareNum) ;
+} ;
+
+// Returns the fibonacci number in given sequence.
+def fib ( n ) do {
+    if n == 0 or n == 1 do {
+        return (n) ;
+    }
+    else do {
+        return ( fib ( n - 1 ) + fib ( n - 2 ) );    
+    } ;
+} ;
+
+// Takes square of given number.
+def square ( num ) do {
+    return (num * num) ;
+};

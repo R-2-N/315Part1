@@ -1,0 +1,50 @@
+// A function that sprays the pesticides in its tank along a line.
+
+// Second text function.
+// Determined properties: 
+// field short side: 6 meters
+// field long side: 16 meters
+// distance between border and line: 2 meters
+
+def testFunct2 () do {
+
+    // increase height to 4 meters, move with 1 meter / second.
+    while ( getAltitude ( ) < 4 ) do {
+        ascend ( 1 ) ;
+    } ;
+    verticalStop () ;
+    while ( getAltitude ( ) > 4 ) do {
+        descend ( 1 ) ;
+    } ;
+    verticalStop () ;
+
+    // start moving to the spray line
+    testFunct1 ( 0 , 2 ) ;
+    testFunct1 ( 90 , 2 ) ;
+
+    // start spraying
+    testFunct1 ( -90 , 0 ) ;
+    enableSpray( ) ;
+    testFunct1 ( 0 , 2 ) ;
+
+    // short side on the left is done, continuing with long side on top
+    testFunct1 ( 90 , 12 ) ;
+
+    // continuing with short side on right
+    testFunct1 ( 90 , 2 ) ;
+
+    // continuing with long side on bottom
+    testFunct1 (90 , 12 ) ;
+
+    // job is done, stop spraying and land
+    horizontalStop ( ) ;
+    disableSpray ( ) ;
+
+    while ( getAltitude ( ) > 0 ) do {
+        descend ( 1 ) ;
+    } ;
+
+    // landed and done
+    verticalStop ( ) ;
+    return (true) ; 
+} ;
