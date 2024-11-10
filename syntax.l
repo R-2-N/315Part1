@@ -3,6 +3,10 @@ digit         [0-9]
 alphabetic    [a-zA-Z]
 alphanumeric  ({digit}|{alphabetic})
 sign          [+-]
+START   \/\*
+END     \*\/
+SIMPLE  [^*]
+COMPLEX \*\/[^\/]
 %%
 ;                             printf("SEMICOLON");
 ,                             printf("COMMA");
@@ -22,13 +26,14 @@ xor                           printf("XOR");
 \-                             printf("MINUS");
 \*                             printf("MULTIPLICATION");
 \/\/.*                            printf("COMMENT");
+{START}({SIMPLE}|{COMPLEX})*{END}                 printf("MULTILINE_COMMENT");
 \/                             printf("DIVISION");
 \(                             printf("LP");
 \)                             printf("RP");
 \{                             printf("LBRACE");
 \}                             printf("RBRACE");
 (int|string|bool|float|double|char)                           printf("TYPE");
-(getHeading|getAltitude|getTime|ascend|descend|verticalStop|moveForward|moveBackward|horizontalStop|turnLeft1Deg|turnRight1Deg|enableSpray|disableSpray|input|output)      printf("PRIMITIVE_FUNCTION");
+(getHeading|getAltitude|getTime|ascend|descend|verticalStop|moveForward|moveBackward|horizontalStop|turnLeft1Deg|turnRight1Deg|enableSpray|disableSpray|input|output|connect|send|request)      printf("PRIMITIVE_FUNCTION");
 continue                      printf("CONTINUE");
 def                           printf("DEF");
 break                         printf("BREAK");
