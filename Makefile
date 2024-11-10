@@ -1,32 +1,32 @@
 run:
-	lex syntax.l
-	yacc -v yacc.y
+	lex CS315_24F_Team_12.lex
+	yacc CS315_24F_Team_12.yacc
 	gcc y.tab.c -o parser
 
 
 test1:
-	./parser < test1.txt
+	./parser < CS315_24F_Team_12_Test1.txt
 
 test2:
-	./parser < test2.txt
+	./parser < CS315_24F_Team_12_Test2.txt
 
 test3:
-	./parser < test3.txt
+	./parser < CS315_24F_Team_12_Test3.txt
 
 test4:
-	./parser < test4.txt
+	./parser < CS315_24F_Team_12_Test4.txt
 
-errortest1:
-	./parser < test1error.txt
+test1Error:
+	./parser < CS315_24F_Team_12_Test1Error.txt
 
-errortest2:
-	./parser < test2error.txt
+test2Error:
+	./parser < CS315_24F_Team_12_Test2Error.txt
 
-errortest3:
-	./parser < test3error.txt
+test3Error:
+	./parser < CS315_24F_Team_12_Test3Error.txt
 
-errortest4:
-	./parser < test4error.txt
+test4Error:
+	./parser < CS315_24F_Team_12_Test4Error.txt
 
 
 clean:
