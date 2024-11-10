@@ -2,9 +2,9 @@
 SEMICOLON COMMENT IF DO LBRACE RBRACE ELSE WHILE FOR DEF VARIABLE LP RP RETURN COMMA TYPE CONTINUE BOOLEAN LESSER LARGER LESSER_EQ LARGER_EQ EQUALS NOT_EQUALS AND OR XOR BREAK ASSIGNMENT MINUS PLUS DIVISION MULTIPLICATION MODULUS NOT INTEGER FLOAT STRING PRIMITIVE_FUNCTION
 %%
 
-program: program statement_list | program COMMENT | COMMENT | statement_list;
+program: statement_list;
 
-statement_list: statement_list SEMICOLON statement SEMICOLON | statement SEMICOLON;
+statement_list: statement_list statement SEMICOLON | statement SEMICOLON | statement_list COMMENT | COMMENT;
 statement: void_statement | expression;
 
 void_statement: if_statement | loop | function_def | type_def | BREAK | CONTINUE;
@@ -13,10 +13,10 @@ if_statement: if_statement else_statement | IF conditional_expression DO LBRACE 
 else_statement: ELSE DO LBRACE statement_list RBRACE | ELSE IF conditional_expression DO LBRACE statement_list RBRACE;
 
 loop: while_loop | for_loop;
-while_loop: WHILE expression DO LBRACE statement_list RBRACE
+while_loop: WHILE LP expression RP DO LBRACE statement_list RBRACE
 for_loop: FOR LP assignment_expression SEMICOLON expression SEMICOLON assignment_expression RP DO LBRACE statement_list RBRACE; 
 
-function_def: DEF VARIABLE LP variable_list RP DO LBRACE statement_list RETURN LP expression RP RBRACE;
+function_def: DEF VARIABLE LP variable_list RP DO LBRACE statement_list RETURN LP expression RP SEMICOLON RBRACE;
 variable_list: VARIABLE COMMA variable_list | VARIABLE | EMPTY;
 
 type_def: TYPE VARIABLE;
@@ -49,6 +49,9 @@ EMPTY: ;
 %%
 
 #include "lex.yy.c"
-int yyerror(char* s){
-	fprintf(stderr, "%s\n", s);
+int lineno = 0;
+extern int yylineno;
+void yyerror(char *s){fprintf(stderr, "error::%s at line %d\n", s, yylineno);}
+int main(){
+	return yyparse();
 }
