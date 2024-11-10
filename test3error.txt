@@ -3,13 +3,13 @@
 // Main function that takes input and streams output.
 def testFunct2 ( ) do {
     int fibNo ;
-    fibNo = input ( ) ; // input function missing parameters!
+    fibNo = input ( "Fibonacci number no: " ) ;
 
     int fibNum = fib ( fibNo ) ;
     int squareNum = square ( fibNum ) ;
 
     output ( squareNum ) ;
-    return (squareNum) ;
+    return squareNum ; // return has missing paranthesis
 } ;
 
 // Returns the fibonacci number in given sequence.

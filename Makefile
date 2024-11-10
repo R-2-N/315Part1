@@ -16,6 +16,18 @@ test3:
 test4:
 	./parser < test4.txt
 
+errortest1:
+	./parser < test1error.txt
+
+errortest2:
+	./parser < test2error.txt
+
+errortest3:
+	./parser < test3error.txt
+
+errortest4:
+	./parser < test4error.txt
+
 
 clean:
 	rm -f lex.yy.c
