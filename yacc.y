@@ -16,12 +16,12 @@ loop: while_loop | for_loop;
 while_loop: WHILE LP expression RP DO LBRACE statement_list RBRACE
 for_loop: FOR LP assignment_expression SEMICOLON expression SEMICOLON assignment_expression RP DO LBRACE statement_list RBRACE; 
 
-function_def: DEF VARIABLE LP variable_list RP DO LBRACE statement_list RETURN LP expression RP SEMICOLON RBRACE;
+function_def: DEF VARIABLE LP variable_list RP DO LBRACE statement_list RBRACE;
 variable_list: VARIABLE COMMA variable_list | VARIABLE | EMPTY;
 
 type_def: TYPE VARIABLE;
 
-expression: conditional_expression | assignment_expression;
+expression: conditional_expression | assignment_expression | RETURN LP expression RP;
 
 conditional_expression: conditional_expression condition_operator low_precedence_arithmetic_expression | low_precedence_arithmetic_expression;
 

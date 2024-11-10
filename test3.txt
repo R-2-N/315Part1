@@ -9,20 +9,20 @@ def testFunct2 ( ) do {
     int squareNum = square ( fibNum ) ;
 
     output ( squareNum ) ;
-    return squareNum ;
+    return (squareNum) ;
 } ;
 
 // Returns the fibonacci number in given sequence.
-def fib ( n ) {
+def fib ( n ) do {
     if n == 0 or n == 1 do {
-        return n ;
-    } ;
+        return (n) ;
+    }
     else do {
         return ( fib ( n - 1 ) + fib ( n - 2 ) );    
     } ;
 } ;
 
 // Takes square of given number.
-def square ( num ) {
-    return num * num ;
-}
+def square ( num ) do {
+    return (num * num) ;
+};
