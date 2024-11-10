@@ -3,6 +3,7 @@ run:
 	yacc -v yacc.y
 	gcc y.tab.c -o parser
 
+
 test1:
 	./parser < test1.txt
 
@@ -14,3 +15,9 @@ test3:
 
 test4:
 	./parser < test4.txt
+
+
+clean:
+	rm -f lex.yy.c
+	rm -f y.tab.c
+	rm -f y.output

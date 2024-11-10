@@ -1,9 +1,7 @@
-<program> ::= <program> <statement_list> | <program> <COMMENT> | <COMMENT> | <statement_list>
+<program> ::= <statement_list>
 
-<statement_list> ::= <statement_list> <statement> <SEMICOLON> | <statement> <SEMICOLON>
-<statement> ::= <void_statement> | <expression> 
-
-<comment_list> ::= <COMMENT> <comment_list> | <COMMENT>
+<statement_list> ::= <statement_list> <statement> <SEMICOLON> | <statement> <SEMICOLON> | statement_list COMMENT | COMMENT
+<statement> ::= <void_statement> | <expression>
 
 <void_statement> ::= <if_statement> | <loop> | <function_def> | <type_def> | <BREAK> | <CONTINUE>
 
@@ -14,18 +12,18 @@
 <while_loop> ::= <WHILE> <expression> <DO> <LBRACE> <statement_list> <RBRACE>
 <for_loop> ::= <FOR> <LP> <assignment_expression> <SEMICOLON> <expression> <SEMICOLON> <assignment_expression> <RP> <DO> <LBRACE> <statement_list> <RBRACE> 
 
-<function_def> ::= <DEF> <VARIABLE> <LP> <variable_list> <RP> <DO> <LBRACE> <statement_list> <RETURN> <LP> <expression> <RP> <RBRACE>
-<variable_list> ::= <VARIABLE> <COMMA> <variable_list> | <VARIABLE> | <EMPTY> 
+<function_def> ::= <DEF> <VARIABLE> <LP> <variable_list> <RP> <DO> <LBRACE> <statement_list> <RBRACE>
+<variable_list> ::= <VARIABLE> <COMMA> <variable_list> | <VARIABLE> | <EMPTY>
 
 <type_def> ::= <TYPE> <VARIABLE>
 
-<expression> ::= <conditional_expression> | <assignment_expression>
+<expression> ::= <conditional_expression> | <assignment_expression> | <RETURN> <LP> expression <RP>
 
-<conditional_expression> ::= <conditional_expression> <condition_operator> <low_precedence_arithmetic_expression> | <low_precedence_arithmetic_expression> 
+<conditional_expression> ::= <conditional_expression> <condition_operator> <low_precedence_arithmetic_expression> | <low_precedence_arithmetic_expression>
 
 <condition_operator> ::= <LESSER> | <LARGER> | <LESSER_EQ> | <LARGER_EQ> | <EQUALS> | <NOT_EQUALS> | <AND> | <OR> | <XOR>
 
-<assignment_expression> ::= <type_def> <ASSIGNMENT> <expression> | <VARIABLE> <ASSIGNMENT> <expression> | <low_precedence_arithmetic_expression>
+<assignment_expression> ::= <type_def> <ASSIGNMENT> <expression> | <VARIABLE> <ASSIGNMENT> <expression>
 
 <low_precedence_arithmetic_expression> ::=  <low_precedence_arithmetic_expression> <low_precedence_operator> <high_precedence_arithmetic_expression> | <high_precedence_arithmetic_expression>
 <high_precedence_arithmetic_expression> ::= <high_precedence_arithmetic_expression> <high_precedence_operator> <highest_precedence_arithmetic_expression> | <highest_precedence_arithmetic_expression>
