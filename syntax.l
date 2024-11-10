@@ -44,5 +44,6 @@ else                          return(ELSE);
 {alphabetic}+{alphanumeric}*  return(VARIABLE);
 \"([^\"\\]*(\\.[^\"\\]*)*)\"                         return(STRING);
 \n {extern int lineno; lineno++;}
+. ;
 %%
 int yywrap(){return 1;}
